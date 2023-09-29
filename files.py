@@ -17,8 +17,24 @@ def word_search(file_name):
             return print("Word found")
     return print("Word not found")
 
+def longest_word(string):
+    words = string.split()
+    longest = ''
+    for word in words:
+        if len(word) > len(longest):
+            longest = word
+    if longest != '':
+        print(longest)
+
+def longest_words(file_name):
+    file = open(file_name)
+    for line in file:
+        line = line.strip()
+        longest_word(line)
+    file.close()
+
 def main():
-    word_search("data/words.txt")
+    longest_words("data/alice.txt")
 
 if __name__ == "__main__":
     main()
