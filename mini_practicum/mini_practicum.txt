@@ -1,0 +1,62 @@
+Unit 04 Practice Problems
+
+For the remainder of this semester, you will begin each new unit by solving a
+set of practice problems based on the material from the previous unit. You will
+have 30 minutes to complete your answers and push your solution to GitHub. 
+Raise your hand if you need help.
+
+The goal of these "mini practica" is to give you practice with coding problems
+similar to those that you will see on the midterm practica. You will be 
+required to solve each problem with minimal assistance. You should use these
+mini-practica as an opportunity to gage your preparedness for the exams.
+
+Each mini-practicum counts as a homework assignment. The numbered 
+problems below are weighted equally. 
+
+
+1. Create a new Python module in a file named "pi_quiz.py" and implement a 
+   function named "pi_tester" which takes no parameters. Your function needs to
+   meet the following requirements:
+
+    a. Your function should prompt the user to enter the decimal digits of pi in
+       order, up to the first 100 decimal places.
+    b. As each digit is entered, compare it against the solution. If it is 
+       correct, ask for the next digit. If it is not, print an error message 
+       with the correct digit.
+    c. Repeat until an incorrect digit is entered or 100 correct digits are 
+       entered.
+    d. The function should return the number of correct decimal digits that were
+       entered.
+
+Note: The value of pi to 100 decimal places is: 3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679
+
+2. In your "pi_quiz" module, implement a display_score function that takes a 
+   score as its only parameter. Your function needs to meet the following 
+   requirements:
+
+    a. Display a message indicating the number of correct decimal digits and the
+       user's title, which is defined below:
+
+       Score 0 - 4: PI Neophyte
+       Score 5 - 9: PI Novice
+       Score 10 - 24: PI Journeyman
+       Score 25 - 49: PI Enthusiast
+       Score 50 - 96: PI Connoisseur
+       Score 97 - 100: PI Expert
+       Score 100+: PI Imposter (this state is only reachable if there is an 
+                   error in the code)
+
+    b. Write a main function that calls pi_tester and passes the results to 
+       display score.
+
+Note: The file pi_100_digits_one_per_line.txt has been provided to aid in 
+testing. You can copy however many digits you want from the file and paste them
+on the command line of your running pi_quiz. This will save you the time of 
+hand entering the values.
+
+
+Submission Instructions
+
+You must ensure that your solution to this assignment is committed and pushed to
+GitHub within the practicum duration. 
+
