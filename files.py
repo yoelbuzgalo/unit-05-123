@@ -4,7 +4,7 @@ def print_lines(file_name):
     '''
     my_file = open(file_name)
     for line in my_file:
-        print(line) # Prints every line in the file
+        print(line.strip()) # Prints every line in the file
 
 def main():
     print_lines("data/alice.txt")
