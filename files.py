@@ -33,8 +33,17 @@ def longest_words(file_name):
         longest_word(line)
     file.close()
 
+def print_names(file_name):
+    file = open(file_name)
+    next(file)
+    for line in file:
+        line = line.strip()
+        line = line.split(",")
+        print(line[1], line[0])
+    file.close()
+
 def main():
-    longest_words("data/alice.txt")
+    print_names("data/grades_010.csv")
 
 if __name__ == "__main__":
     main()
