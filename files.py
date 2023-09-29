@@ -42,8 +42,22 @@ def print_names(file_name):
         print(line[1], line[0])
     file.close()
 
+def average_grade(file_name, column):
+    sum = 0
+    count = 0
+    with open(file_name) as file:
+        header = next(file).split(',') # skip header
+        for line in file:
+            line = line.strip()
+            values = line.split(",")
+            sum += float(values[column])
+            count += 1
+    print(header[column], sum/count)
+
+        
+
 def main():
-    print_names("data/grades_010.csv")
+    average_grade("data/grades_010.csv", 4)
 
 if __name__ == "__main__":
     main()
