@@ -40,8 +40,19 @@ def division():
         numerator_input = input("Enter a numerator value: ")
         denominator_input = input("Enter a denominator value: ")
 
+def password():
+    user_password = input("Enter password: ")
+    if len(user_password) >= 10 and len(user_password) <= 20:
+        user_password_2 = input("Please confirm your password again: ")
+        if user_password == user_password_2:
+            return user_password
+        else:
+            raise ValueError("Your confirmed passwords don't match")
+    else:
+        raise ValueError("Password needs to be between 10 and 20 characters long")
+
 def main():
-    division()
+    password()
 
 if __name__ == "__main__":
     main()
