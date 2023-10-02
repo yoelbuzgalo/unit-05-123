@@ -8,7 +8,11 @@ def numbers():
                     sum = 0
                     for line in file:
                         line = line.strip()
-                        line = int(line)
+                        try:
+                            line = int(line)
+                        except:
+                            print("Error trying to cast", line, "... skipping")
+                            continue
                         sum += line
                     print("sum of numbers:", sum)
                     total += sum
