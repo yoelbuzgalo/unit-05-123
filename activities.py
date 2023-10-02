@@ -27,13 +27,20 @@ def numbers():
 def division():
     numerator_input = input("Enter a numerator value: ")
     denominator_input = input("Enter a denominator value: ")
+    attempts = 3
     while numerator_input != "" and denominator_input != "":
         try:
             value = float(numerator_input)/float(denominator_input)
-        except ValueError:
+        except ValueError as ve:
+            attempts -= 1
+            if attempts <= 0:
+                raise ve
             print("There was an error with casting either of the values to float value")
             break
-        except ZeroDivisionError:
+        except ZeroDivisionError as zde:
+            attempts -= 1
+            if attempts <= 0:
+                raise zde
             print("Your denominator cannot be 0")
             break
         print("Result:", value)
@@ -52,7 +59,7 @@ def password():
         raise ValueError("Password needs to be between 10 and 20 characters long")
 
 def main():
-    password()
+    division()
 
 if __name__ == "__main__":
     main()
