@@ -12,8 +12,10 @@ def numbers():
                         sum += line
                     print("sum of numbers:", sum)
                     total += sum
-            except:
+            except FileNotFoundError:
                 print("File could not be found or open")
+            except ValueError:
+                print("File format mismatch for this loop program")
         else:
             break
     print("Total =", total)
