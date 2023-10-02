@@ -1,17 +1,22 @@
 def numbers():
+    total = 0
     while True:
         file_name_input = input("Enter a file name: ")
         if file_name_input != '':
-            with open(file_name_input) as file:
-                sum = 0
-                for line in file:
-                    line = line.strip()
-                    line = int(line)
-                    sum += line
-                print("sum of numbers:", sum)
+            try:
+                with open(file_name_input) as file:
+                    sum = 0
+                    for line in file:
+                        line = line.strip()
+                        line = int(line)
+                        sum += line
+                    print("sum of numbers:", sum)
+                    total += sum
+            except:
+                print("File could not be found or open")
         else:
             break
-
+    print("Total =", total)
 def main():
     numbers()
 
