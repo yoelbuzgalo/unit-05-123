@@ -23,8 +23,25 @@ def numbers():
         else:
             break
     print("Total =", total)
+
+def division():
+    numerator_input = input("Enter a numerator value: ")
+    denominator_input = input("Enter a denominator value: ")
+    while numerator_input != "" and denominator_input != "":
+        try:
+            value = float(numerator_input)/float(denominator_input)
+        except ValueError:
+            print("There was an error with casting either of the values to float value")
+            break
+        except ZeroDivisionError:
+            print("Your denominator cannot be 0")
+            break
+        print("Result:", value)
+        numerator_input = input("Enter a numerator value: ")
+        denominator_input = input("Enter a denominator value: ")
+
 def main():
-    numbers()
+    division()
 
 if __name__ == "__main__":
     main()
