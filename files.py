@@ -1,3 +1,5 @@
+import plotter
+
 def print_lines(file_name):
     '''
     This function opens a file based on the path/name passed
@@ -54,10 +56,20 @@ def average_grade(file_name, column):
             count += 1
     print(header[column], sum/count)
 
-        
+def plot_grades(file_name, column):
+    with open(file_name) as file:
+        header = next(file).split(',') # skip header
+        plotter.init(header[column], "Students", "Grade")
+        plotter.new_series("Lab Grade")
+        for line in file:
+            line = line.strip()
+            values = line.split(",")
+            plotter.add_data_point(float(values[column]))
+    plotter.plot()
+
 
 def main():
-    average_grade("data/grades_010.csv", 4)
+    plot_grades("data/grades_010.csv", 4)
 
 if __name__ == "__main__":
     main()

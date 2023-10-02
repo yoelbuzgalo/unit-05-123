@@ -16,7 +16,7 @@ def test_encrypt_letter():
 def test_encrypt_message():
     # setup
     plaintext = "HELLO"
-    expected = "KH0OR"
+    expected = "KHOOR"
 
     # invoke
     actual = encrypt_message(plaintext)
