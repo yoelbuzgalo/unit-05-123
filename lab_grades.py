@@ -2,7 +2,7 @@ def terminate():
     '''
     This function will return True upon user input of 'y' otherwise False.
     '''
-    exit_input = input("Are you sure you want to quit? (y/n)")
+    exit_input = input("Are you sure you want to quit? (y/n): ")
     if exit_input.lower() == 'y':
         return True
     return False
@@ -16,3 +16,23 @@ def student_lab_average(grades):
     for grade in grades:
         total += grade # Add to total for every grade received
     return (total/lab_grades) # Calculates the average based on default 10 classes, so even if it was missing 1 or more classes, it would count them as 0
+
+def main():
+    '''
+    Main entry of this program
+    '''
+    while True:
+        user_input = input("Enter a filename or 'quit' to quit: ")
+        if user_input == 'quit':
+            if terminate(): # Calls the terminate function to double check if the user is sure, upon True itll break the loop
+                break # Terminates the loop
+            continue # Goes back to initial loop
+        elif user_input == '':
+            continue # Goes back to initial loop
+        else:
+            print("Testing!")
+    print("Goodbye!")
+    return
+
+if __name__ == "__main__":
+    main()
