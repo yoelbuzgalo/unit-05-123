@@ -1,4 +1,5 @@
 import csv
+import re
 
 def opener(filename):
     try:
@@ -14,6 +15,16 @@ def names_and_addresses(filename):
         header = next(csv_reader)
         for record in csv_reader:
             print("Name:", record[0], "Address:", record[1])
+
+def zip_check(filename):
+    with open(filename) as file:
+        csv_reader = csv.reader(file)
+        header = next(csv_reader)
+        for record in csv_reader:
+            if re.findall(', [789]\d{4}', record[1]):
+                print(record[0])
+                
+                
 
 def average(filename, column):
     with open(filename) as file:
@@ -40,7 +51,8 @@ def main():
     # print("File is able to be opened: ", opener("data/"+file_input))
     # names_and_addresses("data/full_grades_010.csv")
     # print(first_only("data/full_grades_010.csv"))
-    print(average("data/full_grades_010.csv", 3))
+    # print(average("data/full_grades_010.csv", 26))
+    zip_check("data/full_grades_010.csv")
 
 if __name__ == "__main__":
     main()
