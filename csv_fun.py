@@ -15,6 +15,17 @@ def names_and_addresses(filename):
         for record in csv_reader:
             print("Name:", record[0], "Address:", record[1])
 
+def average(filename, column):
+    with open(filename) as file:
+        csv_reader = csv.reader(file)
+        header = next(csv_reader)
+        sum = 0
+        counter = 0
+        for record in csv_reader:
+            counter += 1
+            sum += float(record[column])
+        return sum/counter
+
 def first_only(filename):
     with open(filename) as file:
         csv_reader = csv.reader(file)
@@ -27,8 +38,9 @@ def first_only(filename):
 def main():
     # file_input = input("Enter filename to open: ")
     # print("File is able to be opened: ", opener("data/"+file_input))
-    names_and_addresses("data/full_grades_010.csv")
+    # names_and_addresses("data/full_grades_010.csv")
     # print(first_only("data/full_grades_010.csv"))
+    print(average("data/full_grades_010.csv", 3))
 
 if __name__ == "__main__":
     main()
