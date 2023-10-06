@@ -32,8 +32,20 @@ def get_average(filename, column):
             except:
                 print("Not able to convert", record[column], " to a float value...skipping")
                 continue
-        print("Average of a given column is: ", (total_score/counter))
+        return (total_score/counter)
+
+def plot_class_averages(filename):
+        plotter.init("Class Average", "Grade Item", "Average")
+        plotter.new_series("Series 1")
+        for index in range(27):
+            if index > 2:
+                plotter.add_data_point(get_average(filename, index))
+        plotter.plot()
+
+            
+            
         
 
-plot_grades("data/full_grades_010.csv", "Tsiatsos", "Shamella")
-get_average("data/full_grades_010.csv", 4)
+# plot_grades("data/full_grades_010.csv", "Tsiatsos", "Shamella")
+# get_average("data/full_grades_010.csv", 4)
+plot_class_averages("data/full_grades_010.csv")
