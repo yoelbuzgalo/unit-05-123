@@ -12,6 +12,9 @@ def plot_grades(filename, firstname, lastname):
             if re.findall(first_name_pattern,record[0]) and re.findall(last_name_pattern, record[0]):
                 plotter.init(record[0], "Grade Item", "Score")
                 plotter.new_series("Series 1")
+                for index in range(len(record)):
+                    if index > 2:
+                        plotter.add_data_point(float(record[index]))
                 plotter.plot()
         else:
             print("Could not find any matched result, aborting")
