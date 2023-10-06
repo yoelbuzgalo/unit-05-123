@@ -42,10 +42,12 @@ def plot_class_averages(filename):
                 plotter.add_data_point(get_average(filename, index))
         plotter.plot()
 
-            
-            
-        
+def main():
+    plot_grades("data/full_grades_100.csv", "Coldivar", "Vikram")
+    plot_grades("data/full_grades_100.csv", "Gommer", "Blake")
+    plot_class_averages("data/full_grades_999.csv")
 
-# plot_grades("data/full_grades_010.csv", "Tsiatsos", "Shamella")
-# get_average("data/full_grades_010.csv", 4)
-plot_class_averages("data/full_grades_010.csv")
+
+
+if __name__ == "__main__":
+    main()
